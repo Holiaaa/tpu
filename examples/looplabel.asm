@@ -1,4 +1,4 @@
-; Démonstration des labels
+; Démonstration des labels de TASM
 
 MOV A 0
 LOOP:
