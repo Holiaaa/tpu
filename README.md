@@ -6,4 +6,4 @@ Custom CPU architecture that comes with :
 - Téo CPU Emulator X (`tcex.py`) : GUI application to launch roms and have a better view of what's happening.
 - TPU ISA (`cpu_instructions.txt`) : All instructions supported by TPU.
 
-The TPU is also documented in a french technical document : 
+The TPU is also documented in a french technical document : [Here](https://github.com/Holiaaa/tpu/blob/main/docs/TPU-French-Technical.pdf)
