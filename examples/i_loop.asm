@@ -1,0 +1,5 @@
+LOOP:
+INC A 
+CMP A 10
+JNE %LOOP
+RET

@@ -1,0 +1,16 @@
+; Standard library (io module)
+; by Téo JAUFFRET
+
+STD_RESET:
+MOV A 0
+MOV B 0
+MOV C 0
+MOV D 0
+RET
+
+STD_RESETF:
+PUSH A
+MOV A 0
+CMP A 1
+POP A
+RET

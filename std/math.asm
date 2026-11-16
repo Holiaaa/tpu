@@ -1,0 +1,37 @@
+; Standard library (math module)
+; by Téo JAUFFRET
+
+; Division
+STD_DIV:
+MOV D 0
+MOV C 0
+_STD_DIV:
+ADDR D B
+CMPR D A
+INC C
+JNE %_STD_DIV
+MOV D 0
+RET
+
+; Multiplication
+STD_MUL:
+MOV D 0
+MOV C 0
+_STD_MUL:
+INC C
+ADDR D B
+CMPR C A
+JNE %_STD_MUL
+MOVR C D
+MOV D 0
+RET
+
+; Check if a number is odd or not.
+STD_ISPAIR:
+CLT A 2
+JEQ %_STD_ISPAIR_FIN
+SUB A 2
+JMP %STD_ISPAIR
+_STD_ISPAIR_FIN:
+CMP A 0
+RET

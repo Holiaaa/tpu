@@ -1,0 +1,5 @@
+@INCLUDE "i_loop.asm"
+
+MOV A 0
+CALL %LOOP
+HLT

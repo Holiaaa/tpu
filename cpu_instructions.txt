@@ -1,0 +1,31 @@
+Instruction                 | Représentation binaire                                                   | Explications 
+----------------------------|--------------------------------------------------------------------------|-------------------------------------------------------------------------------
+MOV REG, VALUE              | 0xFRVV (R1 registre, VV valeur de 0 à 255) [FA, FB, FC, FD]              | Assigne a un registre une valeur
+ADD REG, VALUE              | 0xERVV (R1 registre, VV valeur de 0 à 255) [EA, EB, EC, ED]              | Ajoute a un registre une valeur 
+SUB REG, VALUE              | 0xDRVV (R1 registre, VV valeur de 0 à 255) [DA, DB, DC, DD]              | Substitue a un registre une valeur
+MOVR REG, REG               | 0xC0RR (R1 registre, R2, registre)                                       | Assigne a un registre la valeur d'un autre registre
+ADDR REG, REG               | 0xC1RR (R1 registre, R2, registre)                                       | Ajoute a un registre la valeur d'un autre registre
+SUBR REG, REG               | 0xC2RR (R1 registre, R2, registre)                                       | Substitue a un registre la valeur d'un autre registre
+JMP VALUE                   | 0xC3VV (VV valeur de 0 à 255)                                            | Jump a une certaine instruction
+JEQ VALUE                   | 0xC4VV (VV valeur de 0 à 255)                                            | Jump a une certaine instruction si une condition est verifié
+JNE VALUE                   | 0xC5VV (VV valeur de 0 à 255) (Vrai par défaut)                          | Jump a une certaine instruction si une condition n'est pas verifié
+CMP REG, VALUE              | 0x9RVV (R1 registre, VV valeur de 0 à 255) [9A, 9B, 9C, 9D]              | Compare la valeur d'un registre avec une valeur (égalité)
+CGT REG, VALUE              | 0x8RVV (R1 registre, VV valeur de 0 à 255) [8A, 8B, 8C, 8D]              | Compare la valeur d'un registre avec une valeur (plus grand que)
+CLT REG, VALUE              | 0x7RVV (R1 registre, VV valeur de 0 à 255) [7A, 7B, 7C, 7D]              | Compare la valeur d'un registre avec une valeur (plus petit que)
+CGE REG, VALUE              | 0x6RVV (R1 registre, VV valeur de 0 à 255) [6A, 6B, 6C, 6D]              | Compare la valeur d'un registre avec une valeur (plus grand ou égal)
+CLE REG, VALUE              | 0x5RVV (R1 registre, VV valeur de 0 à 255) [5A, 5B, 5C, 5D]              | Compare la valeur d'un registre avec une valeur (plus petit ou égal)
+CMPR REG, REG               | 0xC6RR (R1 registre, R2, registre)                                       | Compare la valeur d'un registre avec la valeur d'un autre registre (égalité)
+CGTR REG, REG               | 0xC7RR (R1 registre, R2, registre)                                       | Compare la valeur d'un registre avec la valeur d'un autre registre (plus grand que)
+CLTR REG, REG               | 0xC8RR (R1 registre, R2, registre)                                       | Compare la valeur d'un registre avec la valeur d'un autre registre (plus petit que)
+INC REG                     | 0xC9R0 (R1 registre)                                                     | Incrémente la valeur d'un registre
+DEC REG                     | 0xCAR0 (R2 registre)                                                     | Décrémente la valeur d'un registre
+CGER REG, REG               | 0xCBRR (R1 registre, R2, registre)                                       | Compare la valeur d'un registre avec la valeur d'un autre registre (plus grand ou égal)
+CLER REG, REG               | 0xCCRR (R1 registre, R2, registre)                                       | Compare la valeur d'un registre avec la valeur d'un autre registre (plus petit ou égal)
+STO VALUE                   | 0xB0VV (registre C et D, VV valeur de 0 à 255)                           | Sauvegarde une valeur dans la RAM
+LOA REG                     | 0xBR00 (R1 registre (A ou B), registre C et D) [BA, BB, BC, BD]          | Charge une valeur de la RAM et la sauvegarde dans un registre
+STOR REG                    | 0xAR00 (R1 registre (A ou B), registre C et D) [AA, AB, AC, AD]          | Sauvegarde la valeur d'un registre dans la RAM
+PUSH REG                    | 0x0R00 (R1 registre) [0A, 0B, 0C, 0D]                                    | Ajoute la valeur d'un registre sur la pile
+POP REG                     | 0x1R00 (R1 registre) [1A, 1B, 1C, 1D]                                    | Charge la dernière valeur de la pile dans un registre
+CALL VALUE                  | 0x2IVV (VV valeur de 0 à 255, I valeur de 0 a 7)                         | Appel une fonction en mémoire (en sauvegardant PC sur la stack)
+RET                         | 0x2B00                                                                   | Retourne a l'instruction d'origine
+HLT                         | 0xFFFF                                                                   | Eteint le processeur
