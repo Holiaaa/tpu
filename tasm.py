@@ -1,3 +1,11 @@
+"""
+Téo Assembler (TASM)
+
+usage: python tasm.py source.asm output.bin
+
+You can try using files from the examples folder.
+"""
+
 import sys
 
 if len(sys.argv) < 3:
