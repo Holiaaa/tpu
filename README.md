@@ -8,6 +8,7 @@ Custom CPU architecture that comes with :
 
 The TPU is also documented in a french technical document : [Here](https://github.com/Holiaaa/tpu/blob/main/docs/TPU-French-Technical.pdf)
 
+## Testing the CPU
 Here is a test program that the TPU can run (`examples/testprogram.asm`):
 ```asm
 @INCLUDE "std/math.asm"
