@@ -1,3 +1,12 @@
+"""
+Téo CPU Emulator X (TCEX)
+
+usage: python tcex.py
+
+This program show the ROM in real time.
+You can configure RAM and Hz frequency to ajust your preferences.
+"""
+
 import tkinter as tk
 import tkinter.filedialog as fd
 import tkinter.ttk as ttk
