@@ -41,3 +41,17 @@ MOV B 1
 CALL %STD_RESETF
 HLT
 ```
+- To compile the program run : `python tasm.py examples/testprogram.asm rom.bin`
+- To execute it (using TPU Emulator) : `python cpu.py rom.bin`
+  
+You should have at the end :
+```txt
+====== TPU 8BIT ======
+A: 1
+B: 0
+C: 0
+D: 0
+PC: 9
+SP: 0x4000
+FLAG: 0
+```
